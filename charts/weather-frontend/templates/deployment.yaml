@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-frontend
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: weather-frontend
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: weather-frontend
+  template:
+    metadata:
+      labels:
+        app: weather-frontend
+    spec:
+      containers:
+        - name: weather-frontend
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.container.port }}
+          env:
+            - name: BACKEND_URL
+              value: "{{ .Values.env.BACKEND_URL }}"

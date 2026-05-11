@@ -1,0 +1,19 @@
+replicaCount: 1
+
+namespace: dev
+
+image:
+  repository: harirs/weather-frontend
+  tag: dev
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5001
+  targetPort: 5001
+
+container:
+  port: 5001
+
+env:
+  BACKEND_URL: "http://weather-backend:5000"
