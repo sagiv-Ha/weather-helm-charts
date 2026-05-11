@@ -1,0 +1,19 @@
+replicaCount: 1
+
+namespace: dev
+
+image:
+  repository: harirs/weather-backend
+  tag: dev
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+  targetPort: 5000
+
+container:
+  port: 5000
+
+env:
+  OPENWEATHER_API_KEY: ""
