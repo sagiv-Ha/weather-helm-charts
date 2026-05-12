@@ -1,0 +1,10 @@
+# Real secrets - do not upload
+*.env
+.env
+local-secrets/
+weather-backend-secret.env
+weather-API.txt
+
+# Example env files are safe to upload
+!*.example.env
+!examples/*.example.env
