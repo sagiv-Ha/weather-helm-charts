@@ -5,7 +5,7 @@ namespace: prod
 image:
   repository: harirs/weather-backend
   tag: prod
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
