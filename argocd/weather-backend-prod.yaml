@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/sagiv-Ha/weather-helm-charts.git
-    targetRevision: master
+    targetRevision: main
     path: charts/weather-backend
     helm:
       valueFiles:
