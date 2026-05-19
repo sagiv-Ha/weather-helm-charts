@@ -4,7 +4,7 @@ namespace: dev
 
 image:
   repository: harirs/weather-backend
-  tag: dev
+  tag: dev-5d5f4ca
   pullPolicy: Always
 
 service:
